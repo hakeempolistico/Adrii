@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WebStory Engine</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" href="styles/default.css" type="text/css" />
+    </head>
+    <body>
+        <script src="engine/WebStoryEngine.js"></script>
+        <script>
+            using("WSE.functions","WSE.Game").run(function (functions,  Game) {
+                
+                functions.close = function () {
+                   window.open("index_2.html");
+                   window.close();
+               };
+               
+                console.log("Starting the game...");
+                
+                var game = new Game({   
+                    url: "story/game.xmugly",
+                    host: typeof HOST === "undefined" ? false : HOST
+                });
+                
+                game.start();
+            });
+        </script>
+    </body>
+</html>
